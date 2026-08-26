@@ -2,7 +2,7 @@
 
 > Guía paso a paso para instalar Apache, crear un servidor web personalizado y configurar Snort IDS para detectar tráfico ICMP y HTTP.
 
-![Ubuntu]([https://releases.ubuntu.com/jammy/))
+![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04-E95420?style=flat&logo=ubuntu&logoColor=white)
 ![Apache](https://img.shields.io/badge/Apache-2.x-D22128?style=flat&logo=apache&logoColor=white)
 ![Snort](https://img.shields.io/badge/Snort-IDS-CC0000?style=flat)
 
