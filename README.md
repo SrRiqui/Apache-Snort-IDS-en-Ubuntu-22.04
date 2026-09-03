@@ -214,6 +214,8 @@ Guarda con `Ctrl+O` → `Enter` → `Ctrl+X`.
 ### Escaneo de puertos, fuerza bruta SSH e inyección SQL básica sobre tráfico HTTP
 
 ```bash
+
+
 # Detectar escaneo de puertos
 alert tcp any any -> $HOME_NET any (msg:"Port Scan Detectado"; flags:S; threshold: type threshold, track by_src, count 20, seconds 3; sid:1000005; rev:1;)
 
@@ -222,6 +224,10 @@ alert tcp any any -> $HOME_NET 22 (msg:"Fuerza Bruta SSH"; threshold: type thres
 
 # Detectar SQL Injection basico
 alert tcp any any -> $HOME_NET 80 (msg:"Posible SQL Injection"; content:"SELECT"; nocase; sid:1000007; rev:1;)
+
+
+
+
 ```
 
 ### Verificar que `snort.conf` incluye las reglas locales
