@@ -215,18 +215,13 @@ Guarda con `Ctrl+O` → `Enter` → `Ctrl+X`.
 
 ```bash
 # Detectar escaneo de puertos
-alert tcp any any -> $HOME_NET any (msg:"Port Scan Detectado"; flags:S;
-  threshold: type threshold, track by_src, count 20, seconds 3;
-  sid:1000005; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"Port Scan Detectado"; flags:S; threshold: type threshold, track by_src, count 20, seconds 3; sid:1000005; rev:1;)
 
 # Detectar ataque de fuerza bruta SSH
-alert tcp any any -> $HOME_NET 22 (msg:"Fuerza Bruta SSH";
-  threshold: type threshold, track by_src, count 5, seconds 60;
-  sid:1000006; rev:1;)
+alert tcp any any -> $HOME_NET 22 (msg:"Fuerza Bruta SSH"; threshold: type threshold, track by_src, count 5, seconds 60; sid:1000006; rev:1;)
 
 # Detectar SQL Injection basico
-alert tcp any any -> $HOME_NET 80 (msg:"Posible SQL Injection";
-  content:"SELECT"; nocase; sid:1000007; rev:1;)
+alert tcp any any -> $HOME_NET 80 (msg:"Posible SQL Injection"; content:"SELECT"; nocase; sid:1000007; rev:1;)
 ```
 
 ### Verificar que `snort.conf` incluye las reglas locales
